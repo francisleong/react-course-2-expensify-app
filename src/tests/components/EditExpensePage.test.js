@@ -29,10 +29,7 @@ test('should handle startEditExpense', () => {
   expect(startEditExpense).toHaveBeenLastCalledWith(expenses[2].id, expenses[2]);
 });
 
-test('should handle startRemoveExpense', () => {
+test('should handle onRemove to make modal appear', () => {
   wrapper.find('button').simulate('click');
-  expect(history.push).toHaveBeenLastCalledWith('/');
-  expect(startRemoveExpense).toHaveBeenLastCalledWith({
-    id: expenses[2].id
-  });
+  expect(wrapper.state('removeExpenseOption')).toBeTruthy();
 });
