@@ -31,9 +31,10 @@ export class LoginPage extends React.Component {
         <div className="box-layout__box">
           <h1 className="box-layout__title">Expensify</h1>
           <p>It's time to get your expenses under control.</p>
-          <button className="button" onClick={this.props.startLogin}>Login with Google</button>
-          <button className="button" onClick={this.startCreateAccount}>Create a new account</button>
-            <button className="button" onClick={this.startLoginExisting}>Log in to Existing Account</button>
+          <button className="button__login" onClick={this.startLoginExisting}>Login</button>
+          <p>Don't have an account?</p>
+          <img className="box-layout__signin" src="/images/google.png" onClick={this.props.startLogin} />
+          <button className="button__login button--secondary" onClick={this.startCreateAccount}>Create account</button>
         </div>
       </div>
       <CreateAccountModal createAccountOption={this.state.createAccountOption} />

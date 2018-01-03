@@ -17,3 +17,9 @@
 .button--secondary {
   background: #888888;
 }
+
+.button__login {
+  @extend .button;
+  width: 100%;
+  max-width: 21rem;
+}
