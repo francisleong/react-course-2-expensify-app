@@ -17,6 +17,12 @@ export const createAccount = (email, password) => {
   };
 };
 
+export const logIntoExistingAccount = (email, password) => {
+  return () => {
+    return firebase.auth().signInWithEmailAndPassword(email, password);
+  };
+};
+
 export const logout = () => ({
   type: 'LOGOUT'
 });
