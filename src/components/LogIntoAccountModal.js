@@ -30,14 +30,14 @@ class LogIntoAccountModal extends React.Component {
         isOpen={this.props.loginExistingAccountOption}
         contentLabel="Log in to account"
         closeTimeoutMS={200}
-        className="modal"
+        className="modal modal--secondary"
       >
         <form className="form" onSubmit={this.onSubmit}>
-          <p>Email Address:</p>
+          <label>Email Address:</label>
           <input type="text" placeholder="example@gmail.com" value={this.state.email} onChange={this.onEmailChange} onBlur={this.validateEmail} />
-          <p>Password:</p>
+          <label>Password:</label>
           <input type="password" value={this.state.password} onChange={this.onPasswordChange} onBlur={this.validatePassword} />
-          <button>Log In</button>
+          <button className="button">Log In</button>
         </form>
       </Modal>
     )

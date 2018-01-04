@@ -24,3 +24,7 @@
   outline: none;
   padding: $m-size;
 }
+
+.modal--secondary {
+  background: darken($off-white, 10%)
+}
