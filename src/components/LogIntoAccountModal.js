@@ -32,12 +32,15 @@ class LogIntoAccountModal extends React.Component {
         closeTimeoutMS={200}
         className="modal modal--secondary"
       >
-        <form className="form" onSubmit={this.onSubmit}>
+        <form className="form">
           <label>Email Address:</label>
           <input type="text" placeholder="example@gmail.com" value={this.state.email} onChange={this.onEmailChange} onBlur={this.validateEmail} />
           <label>Password:</label>
           <input type="password" value={this.state.password} onChange={this.onPasswordChange} onBlur={this.validatePassword} />
-          <button className="button">Log In</button>
+          <div className="form__buttons">
+            <button className="button button--secondary" onClick={this.props.closeModal}>Cancel</button>
+            <button className="button" onClick={this.onSubmit}>Log In</button>
+          </div>
         </form>
       </Modal>
     )

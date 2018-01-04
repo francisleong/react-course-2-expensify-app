@@ -61,14 +61,17 @@ class CreateAccountModal extends React.Component {
         className="modal"
       >
       <div className="form__container">
-        <form className="form" onSubmit={this.onSubmit}>
+        <form className="form">
           <label>Email Address:</label>
           <input type="text" placeholder="example@gmail.com" value={this.state.email} onChange={this.onEmailChange} onBlur={this.validateEmail} />
-          {this.state.touched.email && !this.state.validEmail && <p className="form.p">Please enter a valid email!</p>}
+          {this.state.touched.email && !this.state.validEmail && <p>Please enter a valid email!</p>}
           <label>Password:</label>
           <input type="password" value={this.state.password} onChange={this.onPasswordChange} onBlur={this.validatePassword} />
           {this.state.touched.password && !this.state.validPassword && <p>Invalid password! Password must contain 8 or more characters, 1 capital, 1 lowercase, and 1 number</p>}
-          <button className="button button--secondary">Create Account</button>
+          <div className="form__buttons">
+            <button className="button button--secondary" onClick={this.props.closeModal}>Cancel</button>
+            <button className="button" onClick={this.onSubmit}>Create</button>
+          </div>
         </form>
       </div>
       </Modal>

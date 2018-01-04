@@ -21,3 +21,9 @@
   font-style: italic;
   margin: 0 0 $m-size 0;
 }
+
+.form__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

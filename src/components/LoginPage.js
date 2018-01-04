@@ -24,6 +24,18 @@ export class LoginPage extends React.Component {
       loginExistingAccountOption: true
     })
   }
+  closeLoginModal = (e) => {
+    e.preventDefault();
+    this.setState({
+      loginExistingAccountOption: false
+    })
+  }
+  closeCreateModal = (e) => {
+    e.preventDefault();
+    this.setState({
+      createAccountOption: false
+    })
+  }
   render() {
     return (
     <div>
@@ -37,8 +49,8 @@ export class LoginPage extends React.Component {
           <button className="button__login button--secondary" onClick={this.startCreateAccount}>Create account</button>
         </div>
       </div>
-      <CreateAccountModal createAccountOption={this.state.createAccountOption} />
-      <LogIntoAccountModal loginExistingAccountOption={this.state.loginExistingAccountOption} />
+      <CreateAccountModal createAccountOption={this.state.createAccountOption} closeModal={this.closeCreateModal} />
+      <LogIntoAccountModal loginExistingAccountOption={this.state.loginExistingAccountOption} closeModal={this.closeLoginModal}/>
     </div>
     );
   }
